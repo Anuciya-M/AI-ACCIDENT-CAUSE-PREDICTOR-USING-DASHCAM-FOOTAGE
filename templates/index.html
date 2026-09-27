@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Accident Cause Predictor - Real Time Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='static.css') }}">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <header>
+            <h1>🚗 AI Accident Cause Predictor</h1>
+            <p>Real-Time Dashcam Analysis & Safety Warning System</p>
+        </header>
+
+        <main class="dashboard">
+            <!-- Live Video Section (Scrollable) -->
+            <section class="video-section">
+                <div id="video-container">
+                    <img id="live-video" src="/video_feed" alt="Live Dashcam Feed">
+                </div>
+            </section>
+
+            <!-- Sidebar Info -->
+            <aside class="sidebar">
+                <!-- Risk Status -->
+                <div class="status-card">
+                    <h3>📊 Risk Analysis</h3>
+                    <canvas id="risk-gauge" width="200" height="200"></canvas>
+                    <p id="risk-level" class="risk">RISK: INITIALIZING...</p>
+                    <p id="cause">CAUSE: Loading...</p>
+                    <p id="prob">PROBABILITY: 0.00</p>
+                </div>
+
+                <!-- Speed Info -->
+                <div class="speed-card">
+                    <h3>⚡ Vehicle Speed</h3>
+                    <div class="metric-box">
+                        <div class="metric-item">
+                            <span class="metric-label">Current Speed:</span>
+                            <span class="metric-value" id="speed-current">0 km/h</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Weather Info -->
+                <div class="weather-card">
+                    <h3>🌧️ Weather</h3>
+                    <div class="metric-box">
+                        <div class="metric-item">
+                            <span class="metric-label">Condition:</span>
+                            <span class="metric-value" id="weather-type">CLEAR</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Visibility:</span>
+                            <span class="metric-value" id="visibility">100%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Collision Risk -->
+                <div class="collision-card">
+                    <h3>💥 Collision Risk</h3>
+                    <div class="metric-box">
+                        <div class="metric-item">
+                            <span class="metric-label">Risk Level:</span>
+                            <span class="metric-value" id="collision-risk">SAFE</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Detected Objects -->
+                <div class="objects-card">
+                    <h3>👥 Detected Objects</h3>
+                    <div id="objects-list">Detecting...</div>
+                </div>
+
+                <!-- Recent Alerts -->
+                <div class="alert-history">
+                    <h3>⚠️ Recent Alerts</h3>
+                    <ul id="alerts">
+                        <li>No alerts yet</li>
+                    </ul>
+                </div>
+
+                <!-- Statistics -->
+                <div class="stats-card">
+                    <h3>📊 Statistics (Last Hour)</h3>
+                    <div class="metric-box">
+                        <div class="metric-item">
+                            <span class="metric-label">Critical Alerts:</span>
+                            <span class="metric-value critical" id="stat-critical">0</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Warnings:</span>
+                            <span class="metric-value warning" id="stat-warning">0</span>
+                        </div>
+                        <div class="metric-item">
+                            <span class="metric-label">Total Alerts:</span>
+                            <span class="metric-value" id="stat-total">0</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Report Button -->
+                <div class="controls">
+                    <button id="report-btn" class="btn-primary">📥 Download Report</button>
+                </div>
+            </aside>
+        </main>
+
+        <footer>
+            <p>Project by ANU | AI Accident Cause Predictor using Dashcam Footage | Enhanced with Speed, Collision,
+                Weather & Alert Logging</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+
+</html>

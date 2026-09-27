@@ -1,0 +1,30 @@
+# Environment & secrets
+.env
+.env.local
+*.env
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# Datasets & models (too large)
+nexar_dataset/
+models/
+yolov8n.pt
+*.pt
+*.pkl
+
+# Database & generated files
+accident_analysis.db
+accident_report.json
+diagnostic_frame_output.jpg
+processed_videos.pkl
+
+# Node
+node_modules/
+package-lock.json
+
+# OS
+.DS_Store

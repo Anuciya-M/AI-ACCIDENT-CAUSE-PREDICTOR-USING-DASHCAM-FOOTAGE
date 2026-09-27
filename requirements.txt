@@ -1,0 +1,13 @@
+ultralytics
+opencv-python
+torch
+torchvision
+numpy
+pyttsx3
+datasets
+tqdm
+scikit-learn
+flask
+setuptools
+psutil
+deep_sort_realtime
